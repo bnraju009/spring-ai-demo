@@ -43,6 +43,70 @@ graph TD
 
 ---
 
+## UI
+
+The application serves a clean single-page chat interface at `http://localhost:8080`.
+
+### Initial state
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│  Spring AI Demo  [Gemini]                                    │
+│                                                              │
+│  Ask anything                                                │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ e.g. Explain Spring AI in simple terms...              │  │
+│  │                                                        │  │
+│  │                                                        │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  [ Ask Gemini ]                                              │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### While waiting for a response
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│  Spring AI Demo  [Gemini]                                    │
+│                                                              │
+│  Ask anything                                                │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ What is Spring AI?                                     │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  [ Ask Gemini ]  (disabled)                                  │
+│                                                              │
+│  ↻  Thinking…                                               │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Response state
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│  Spring AI Demo  [Gemini]                                    │
+│                                                              │
+│  Ask anything                                                │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ What is Spring AI?                                     │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  [ Ask Gemini ]                                              │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Spring AI is a framework within the Spring ecosystem   │  │
+│  │ that simplifies building AI-powered applications by    │  │
+│  │ providing a consistent, Spring-friendly API for        │  │
+│  │ interacting with various AI models and providers…      │  │
+│  └────────────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────────────────┘
+```
+
+> **Tip:** Press `Ctrl+Enter` (or `Cmd+Enter` on macOS) inside the textarea to submit without clicking the button.
+
+---
+
 ## Step 1: Create a Gemini API Key
 
 1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
